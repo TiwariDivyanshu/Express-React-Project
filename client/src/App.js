@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.css';
+import React, {Suspense} from 'react';
 import './App.css';
+const Header = React.lazy(()=>
+import('./Header'));
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit something <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return(
+      <div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Header/>
+        </Suspense>
+        <div>This includes a header and it is a import example</div>
+      </div>
+    )
+  }
 }
 
 export default App;
