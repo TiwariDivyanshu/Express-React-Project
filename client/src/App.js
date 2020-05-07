@@ -13,8 +13,8 @@ class App extends React.Component{
       <div>
         <Suspense fallback={<div>Loading...</div>}>
           <Header/>
+          <div>This includes a header and it is a import example</div>
         </Suspense>
-        <div>This includes a header and it is a import example</div>
       </div>
     )
   }

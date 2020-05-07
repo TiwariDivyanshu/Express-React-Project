@@ -1,3 +1,9 @@
 .Header {
     text-align: right;
+    height: 70px;
+    font-size: 28px;
+}
+
+.Navbar {
+    padding-left: 300px;
 }
