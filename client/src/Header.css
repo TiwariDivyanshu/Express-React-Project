@@ -7,3 +7,30 @@
 .Navbar {
     padding-left: 300px;
 }
+
+.FormDiv {
+    text-align: center;
+    margin-top: 20px;
+    margin-left:400px;
+    margin-right: 600px;
+    height:200px;
+    margin-bottom: 20px;
+    background-color: #363b40 ;
+    color:white;
+}
+
+button {
+    margin-top: 32px;
+    margin-left: 70px;
+}
+
+label {
+    font-size:18px;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+SelectSearch {
+    margin-left: 10px;
+}
