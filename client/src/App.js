@@ -1,19 +1,23 @@
 import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 import React, {Suspense} from 'react';
 import Axios from 'axios';
-import './App.css';
 const Header = React.lazy(()=> import('./Header'));
 const LocationForm = React.lazy(()=> import('./LocationForm'));
 
+var citiesArray = new Array();
 class App extends React.Component{
-  // constructor(props){
-  //   super(props);
-  // }
 
   componentDidMount(){
     Axios.get('http://localhost:3000/cities')
     .then(res=>{
-      console.log(res);
+      var responseArray = (res.data.cities);
+      responseArray.forEach(element =>{
+        citiesArray.push({
+          name: element,
+          value : element 
+        })
+      })
     })
   }
   render(){
@@ -26,8 +30,7 @@ class App extends React.Component{
           </div>
         </div>}>
           <Header/>
-          <LocationForm data = {[{ name: 'Swedish', value: 'sv' },
-                { name: 'English', value: 'en' }]}/>
+          <LocationForm data = {citiesArray}/>
         </Suspense>
       </div>
     )

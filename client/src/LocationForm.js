@@ -14,16 +14,16 @@ const LocationForm = (props) =>{
          city: ''
         },
         onSubmit: values => {
-          alert("you have selected"+formik.values.city);
+          alert("you have selected: "+formik.values.city);
         },
       });
-      const handleDiff = e =>{
+      const handleChanges = e =>{
         formik.setValues({city:e,cities:props.data})
       }
             return (<form onSubmit={formik.handleSubmit} className='form-row align-items-center FormDiv border border-info rounded-sm p5-4 shadow-lg form-group'>
             <div className='col-auto  col-sm-6'>
                 <label className="mr-sm-2" htmlFor='city'>Choose your City</label>
-                <SelectSearch className="mr-sm-2 custom-select" options={formik.values.cities} search={true} name="city" onChange={handleDiff} value={formik.values.city} id='city' />
+                <SelectSearch className="mr-sm-2 custom-select" options={formik.values.cities} search={true} name="city" onChange={handleChanges} value={formik.values.city} id='city' />
             </div>
             <button className='btn btn-primary col-sm-2 find' type="submit">Find!!!</button>
         </form>);
