@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+
 class Header extends React.Component{
   constructor(props){
     super(props);
@@ -10,7 +11,7 @@ class Header extends React.Component{
     };
     this.toggleMenu = this.toggleMenu.bind(this);
   }
-
+  
   toggleMenu(){
     this.setState({
       toggle: !this.state.toggle

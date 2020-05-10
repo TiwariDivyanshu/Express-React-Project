@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React, {Suspense} from 'react';
+import Axios from 'axios';
 import './App.css';
 const Header = React.lazy(()=> import('./Header'));
 const LocationForm = React.lazy(()=> import('./LocationForm'));
@@ -8,6 +9,13 @@ class App extends React.Component{
   // constructor(props){
   //   super(props);
   // }
+
+  componentDidMount(){
+    Axios.get('http://localhost:3000/cities')
+    .then(res=>{
+      console.log(res);
+    })
+  }
   render(){
     return(
       <div>
@@ -18,7 +26,8 @@ class App extends React.Component{
           </div>
         </div>}>
           <Header/>
-          <LocationForm/>
+          <LocationForm data = {[{ name: 'Swedish', value: 'sv' },
+                { name: 'English', value: 'en' }]}/>
         </Suspense>
       </div>
     )

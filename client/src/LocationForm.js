@@ -1,36 +1,33 @@
 import React from 'react';
+import {useFormik} from 'formik';
+import SelectSearch from 'react-select-search';
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Header.css';
-import {useFormik} from 'formik';
+import './SelectSearch.css';
 
-const LocationForm = () =>{
+
+const LocationForm = (props) =>{
     const formik = useFormik({
         initialValues: {
-            city: ''
+          cities: props.data,
+         city: ''
         },
         onSubmit: values => {
-            alert(JSON.stringify(values,null,2));
+          alert("you have selected"+formik.values.city);
         },
-    });
-    return(
-        <form onSubmit = {formik.handleSubmit} className = 'form-row align-items-center FormDiv border border-info rounded-sm p5-4 shadow-lg form-group'>
-            <div className = 'col-auto  col-sm-6'>
-            <label className = "mr-sm-2" htmlFor = 'city'>Choose your City</label>
-            <select
-            className = "custom-select mr-sm-2"
-            id = 'city'
-            name = 'city'
-            type = 'select'
-            onChange = {formik.handleChange}
-            value = {formik.values.city}
-            >
-                <option value = "delhi">Delhi</option>
-                <option value = "Mumbai">Mumbai</option>
-            </select>
+      });
+      const handleDiff = e =>{
+        formik.setValues({city:e,cities:props.data})
+      }
+            return (<form onSubmit={formik.handleSubmit} className='form-row align-items-center FormDiv border border-info rounded-sm p5-4 shadow-lg form-group'>
+            <div className='col-auto  col-sm-6'>
+                <label className="mr-sm-2" htmlFor='city'>Choose your City</label>
+                <SelectSearch className="mr-sm-2 custom-select" options={formik.values.cities} search={true} name="city" onChange={handleDiff} value={formik.values.city} id='city' />
             </div>
-            <button className = 'btn btn-primary col-sm-2'type = "submit">Find!!!</button>
-        </form>
-    );
-};
+            <button className='btn btn-primary col-sm-2 find' type="submit">Find!!!</button>
+        </form>);
+        }
 
+        
 export default LocationForm;
