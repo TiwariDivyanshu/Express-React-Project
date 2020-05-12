@@ -3,7 +3,7 @@ import './App.css';
 import React, {Suspense} from 'react';
 import Axios from 'axios';
 const Header = React.lazy(()=> import('./Header'));
-const LocationForm = React.lazy(()=> import('./LocationForm'));
+const InputForm = React.lazy(()=> import('./InputForm'));
 
 var citiesArray = new Array();
 class App extends React.Component{
@@ -30,7 +30,7 @@ class App extends React.Component{
           </div>
         </div>}>
           <Header/>
-          <LocationForm data = {citiesArray}/>
+          <InputForm data = {citiesArray}/>
         </Suspense>
       </div>
     )

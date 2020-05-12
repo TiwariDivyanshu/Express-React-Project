@@ -6,8 +6,8 @@ router.get('/', function(req, res, next) {
     fs.readFile('cities.json', function(err, data) {
         res.contentType('application/json')
         res.writeHead(200);
-         res.write(data);
-         res.send(); 
+        res.write(data);
+        res.send(); 
     });
 });
 
