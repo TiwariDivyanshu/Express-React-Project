@@ -112,7 +112,7 @@
 }
 
 .select-search__option.is-selected {
-    background: #2FCC8B;
+    background: rgb(98, 96, 96);
     color: #fff;
 }
 
@@ -123,7 +123,7 @@
 
 .select-search__option.is-highlighted.is-selected,
 .select-search__option.is-selected:hover {
-    background: #2eb378;
+    background: rgb(98, 96, 96);
     color: #fff;
 }
 
@@ -176,7 +176,7 @@
 }
 
 .select-search:not(.select-search--multiple) .select-search__input:hover {
-    border-color: #2FCC8B;
+    border-color: rgb(98, 96, 96);
 }
 
 .select-search:not(.select-search--multiple) .select-search__select {

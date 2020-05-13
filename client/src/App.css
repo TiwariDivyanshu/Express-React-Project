@@ -1,4 +1,9 @@
 .App {
   text-align: center;
+ 
 }
-
+body{
+  background-image: url('./images/night.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

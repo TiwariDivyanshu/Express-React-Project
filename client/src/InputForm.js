@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import {useFormik} from 'formik';
 import SelectSearch from 'react-select-search';
 import Axios from 'axios';
@@ -10,7 +10,6 @@ const DisplayGrid = React.lazy(()=> import('./DisplayGrid'));
 class InputForm extends React.Component{
   constructor(props){
     super(props);
-    var self = this;
     this.state = {
       dataJson: props.data,
     }
@@ -23,8 +22,6 @@ class InputForm extends React.Component{
     )
   }
 }
-const metadata1 = {
-};
 const LocationForm = (props) =>{
     const formik = useFormik({
         initialValues: {
@@ -39,7 +36,6 @@ const LocationForm = (props) =>{
           Axios.get('http://localhost:3000/weather',{
             params: {
               city: formik.values.city,
-
             }
           })
     .then(res=>{
@@ -54,15 +50,16 @@ const LocationForm = (props) =>{
         formik.setValues({city:e,cities:props.data})
       }
             return (
-            <div><form onSubmit={formik.handleSubmit} className='form-row align-items-center FormDiv border border-info rounded-sm p5-4 shadow-lg form-group'>
-            <div className='col-auto  col-sm-6'>
-                <label className="mr-sm-2" htmlFor='city'>Choose your City</label>
-                <SelectSearch className="mr-sm-2 custom-select" options={formik.values.cities} search={true} name="city" onChange={handleChanges} value={formik.values.city} id='city'/>
+            <div className = 'Content-page'>
+              <form onSubmit={formik.handleSubmit} className='form-row align-items-center FormDiv form-group'>
+                <div className='col-auto  col-sm-6'>
+                  <label className="mr-sm-2" htmlFor='city'>Choose your City</label>
+                  <SelectSearch className="mr-sm-2 custom-select" options={formik.values.cities} search={true} name="city" onChange={handleChanges} value={formik.values.city} id='city'/>
+                </div>
+                <button className='btn btn-primary col-sm-2 find' type="submit">Find!!!</button>
+              </form>
+              <DisplayGrid valuef = {formik.values.metadata}/>
             </div>
-            <button className='btn btn-primary col-sm-2 find' type="submit">Find!!!</button>
-        </form>
-        <DisplayGrid valuef = {formik.values.metadata}/>
-              </div>
         );
         }
 

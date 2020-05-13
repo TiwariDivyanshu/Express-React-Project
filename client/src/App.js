@@ -5,7 +5,7 @@ import Axios from 'axios';
 const Header = React.lazy(()=> import('./Header'));
 const InputForm = React.lazy(()=> import('./InputForm'));
 
-var citiesArray = new Array();
+var citiesArray = [];
 class App extends React.Component{
 
   componentDidMount(){

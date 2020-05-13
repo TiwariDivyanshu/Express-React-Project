@@ -23,16 +23,16 @@ class Header extends React.Component{
           <header>
               <nav className = 'navbar navbar-expand-lg bg-dark navbar-dark '>
                 <div className = 'container'>
-                    <div className='col-sm-2'><img className='img-fluid img-thumbnail' src={require('./images/logo.jpg')} width='100px'></img></div>
-                    <div className = 'Header navbar-header navbar-brand col-sm-4 '>WEATHER PREDICTOR</div>
+                    <div className='col-sm-3'><img className='img-fluid img-thumbnail' alt='' src={require('./images/logo.jpg')} width='100px'></img></div>
+                    <div className = 'Header navbar-header navbar-brand col-sm-4 '>KNOW YOUR CITY'S WEATHER</div>
                     <button className="navbar-toggler" type="button" onClick={this.toggleMenu}><span className='navbar-toggler-icon'></span></button>
                     <div className={"Navbar collapse navbar-collapse "+show}>
-                      <ul className = 'navbar-nav '>
+                      {/* <ul className = 'navbar-nav '>
                       <li className = 'nav-item'><a className='nav-link' href='#'>Mumbai</a></li>
                       <li className = 'nav-item'><a className='nav-link' href='#'>Delhi</a></li>
                       <li className = 'nav-item'><a className='nav-link' href='#'>KolKata</a></li>
                       <li className = 'nav-item'><a className='nav-link' href='#'>Chennai</a></li>
-                      </ul>
+                      </ul> */}
                     </div>
                   </div>
               </nav>

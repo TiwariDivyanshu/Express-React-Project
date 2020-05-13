@@ -15,7 +15,7 @@
     margin-right: 600px;
     height:280px;
     margin-bottom: 20px;
-    background-color: #363b40 ;
+    /* background-color: #363b40 ; */
     color:white;
     align-items: inherit !important;
 }
@@ -32,9 +32,20 @@ label {
     margin-bottom: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 5%;
-    
+    font-weight: 800;
 }
 
 SelectSearch {
     margin-left: 10px;
 }
+
+.result-table{
+    margin-left: 10%;
+}
+caption{
+    caption-side: top;
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+}
+
